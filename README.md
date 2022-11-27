@@ -9,3 +9,7 @@ docker run \
   -p 2222:22 \
   ssh
 ```
+
+- ingress-nginx [expose tcp service](https://kubernetes.github.io/ingress-nginx/user-guide/exposing-tcp-udp-services/)
+
+- ssh may be the wrong approach if [vscode server](https://code.visualstudio.com/docs/remote/vscode-server) can do it over http
