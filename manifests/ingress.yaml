@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  labels:
+    app.kubernetes.io/instance: blinky
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: blinky
+    app.kubernetes.io/version: latest
+    helm.sh/chart: blinky-1.0.0
+  name: blinky
+  namespace: default
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          service:
+            name: blinky
+            port:
+              number: 80
+        path: /app
+        pathType: Prefix
+      - backend:
+          service:
+            name: vscode
+            port:
+              number: 8443
+        path: /
+        pathType: Prefix
